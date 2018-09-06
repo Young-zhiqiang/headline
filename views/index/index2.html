@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/assets/js/rem.js"></script>
+    <link rel="icon" href="https://s3.pstatp.com/image/toutiao_mobile/icon_180_1.png">
+    <link rel="stylesheet" href="/assets/index/css/index2.css">
+    <link rel="stylesheet" href="/assets/index/css/rem.css">
+    <script src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <title>今日头条</title>
+</head>
+<body>
+<div class="header">
+    <div class="header-title">频道管理</div>
+    <div class="header-icon"><a href="/index.php" style="color: #fff;width: 100%;height: 100%;">&#xe600;</a></div>
+</div>
+
+    <div class="remove-title">点击删除以下频道</div>
+    <div class="remoce-child">
+        <ul class="remoce-item">
+            <?php foreach($results as $k=>$v) { ?>
+                <?php if($v['is_dfult'] == 1) { ?>
+                    <li data_defult="<?php echo $v['id']?>"><span><?php echo $v['name']?></span></li>
+                <?php }?>
+            <?php }?>
+        </ul>
+    </div>
+    <div class="add-title">点击添加以下频道</div>
+    <div class="add-child">
+        <ul class="add-item">
+            <?php foreach($results as $k=>$v) { ?>
+                <?php if($v['is_dfult'] == 0) { ?>
+                    <li data_defult="<?php echo $v['id']?>"><span><?php echo $v['name']?></span></li>
+                <?php }?>
+            <?php }?>
+        </ul>
+    </div>
+
+</body>
+<script src="/assets/index/js/index2.js"></script>
+</html>

@@ -1,0 +1,456 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 790825 */
+    src: url('https://at.alicdn.com/t/font_790825_9bk3lk1ufmi.eot');
+    src: url('https://at.alicdn.com/t/font_790825_9bk3lk1ufmi.eot?#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_790825_9bk3lk1ufmi.woff') format('woff'),
+    url('https://at.alicdn.com/t/font_790825_9bk3lk1ufmi.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_790825_9bk3lk1ufmi.svg#iconfont') format('svg');
+}
+
+/*头部样式*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+#head {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#header {
+    width: 100%;
+    height: 0.88rem;
+    background-color: #d43d3d;
+    position: relative;
+}
+
+.header-title {
+    width: 2.46rem;
+    height: 100%;
+    margin: 0 auto;
+    line-height: 0.88rem;
+    font-size: 0.4rem;
+    color: #FEFCFC;
+    padding-left: 0.3rem;
+}
+
+.header-title-word {
+    font-family: "Microsoft YaHei";
+    font-weight: 800;
+}
+
+.header-title-icon {
+    width: 0.5rem;
+    height: 100%;
+
+    font-family: 'iconfont';
+    position: absolute;
+    left: 1.9rem;
+    right: 0;
+    top: 0;
+    margin: auto;
+    background: url("../img/rotate.png") no-repeat center;
+    background-size: 0.3rem;
+
+}
+
+.header-title-icon.rotate {
+
+    -webkit-animation: dong 0.7s linear;
+}
+
+@keyframes dong {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.header-icon-l {
+    width: 1.08rem;
+    height: 0.5rem;
+    position: absolute;
+    top: 0.15rem;
+    left: 0.2rem;
+    /* bottom: 0; */
+    margin: auto;
+    text-align: center;
+    line-height: 0.5rem;
+    color: #fff;
+    font-size: 0.48rem;
+}
+
+.header-icon-mail {
+    font-family: 'iconfont';
+}
+
+.header-icon-point {
+    position: absolute;
+    top: -6px;
+    right: 0.1rem;
+    color: #fff;
+    font-size: 0.45rem;
+    font-family: 'iconfont';
+}
+
+.header-icon-r {
+    width: 0.72rem;
+    height: 0.48rem;
+    color: #fff;
+    font-size: 0.35rem;
+    position: absolute;
+    top: 0.23rem;
+    /* bottom: 0; */
+    margin: auto;
+    right: 0.25rem;
+    text-align: center;
+    line-height: 0.48rem;
+    font-family: 'iconfont';
+}
+
+/*类型*/
+#species {
+    width: 100%;
+    height: 0.72rem;
+    position: relative;
+    overflow-x: scroll;
+    background-color: #F4F5F6;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.species-window {
+    width: 6.7rem;
+    height: 0.72rem;
+    float: left;
+
+}
+
+.species-childs {
+
+    height: 100%;
+    padding: 0 0.8rem 0 0.3rem;
+    line-height: 0.72rem;
+    color: #505050;
+    font-size: 0.34rem;
+    display: flex;
+    /*flex-wrap: nowrap;*/
+    /*align-content: center;*/
+    /*justify-content: space-between;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.species-childs li {
+    width: 1.08rem;
+    float: left;
+}
+
+.species-more {
+    width: 0.8rem;
+    height: 0.72rem;
+    background-color: #F4F5F6;
+    position: fixed;
+    top: 0.88rem;
+    right: 0;
+    z-index: 10;
+    font-family: 'iconfont';
+    color: #f85959;
+    font-size: 0.40rem;
+    line-height: 0.72rem;
+    text-align: center;
+}
+
+.species-shadow {
+    width: 0.2rem;
+    height: 0.72rem;
+    background: url('../img/show.png');
+    background-size: contain;
+    position: fixed;
+    top: 0.88rem;
+    right: 0.75rem;
+    z-index: 10;
+}
+
+.species-childs-color {
+    color: #f85959;
+}
+
+/*内容*/
+#content {
+    width: 100%;
+    height: auto;
+    margin-top: 1.61rem;
+}
+
+.content-item {
+    width: 6.9rem;
+    height: auto;
+    margin: 0 auto;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.6);
+    overflow: hidden;
+}
+
+.content-item h1 {
+    width: 100%;
+    /*height: 0.42rem;*/
+    overflow: hidden;
+    font-weight: normal;
+    color: #222;
+    font-size: 0.34rem;
+    word-break: break-word;
+}
+
+.content-item-word {
+    width: 100%;
+    height: 0.42rem;
+    line-height: 0.24rem;
+    font-size: 0.2rem;
+    margin-top: 0.2rem;
+}
+
+.level-one {
+    width: 0.5rem;
+    color: #f85959;
+    font-size: 0.2rem;
+    border: 1px solid rgba(248, 89, 89, 0.5);
+}
+
+.level-two {
+    width: 1.2rem;
+    font-size: 0.2rem;
+
+    color: rgb(153, 153, 153);
+
+}
+
+.level-three {
+    width: 0.70rem;
+    font-size: 0.2rem;
+    margin-left: 0.15rem;
+    color: rgb(153, 153, 153);
+
+}
+
+.level-four {
+    width: 0.83rem;
+    font-size: 0.2rem;
+    color: rgb(153, 153, 153);
+    margin-left: 0.15rem;
+}
+
+.content-imgs {
+    width: 6.9rem;
+    height: 4.72rem;
+    margin: 0 auto;
+    padding: 0.32rem 0;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.6);
+}
+
+.content-img {
+    width: 100%;
+    height: 3.57rem;
+}
+
+.content-img img {
+    width: 6.9rem;
+    height: 3.57rem;
+}
+
+/*遮罩*/
+.curtain {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.curtain.appear {
+    display: block;
+}
+
+.curtain-item {
+    width: 5.4rem;
+    height: 4.5rem;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.curtain-img {
+    width: 3.3rem;
+    height: 2.42rem;
+    margin: 0.2rem 0 0 1.08rem;
+    background: url("https://s3a.pstatp.com/growth/mobile_list/image/popup_banner_6006ac97.png");
+    background-size: contain;
+}
+
+.describe {
+    width: 5.4rem;
+    height: 0.36rem;
+    margin: 0.12rem 0 0.48rem 0;
+    text-align: center;
+    line-height: 0.36rem;
+    font-size: 0.34rem;
+    color: #a5a5a5;;
+}
+
+.button {
+    width: 4.4rem;
+    height: 0.8rem;
+    border-radius: 0.1rem;
+    margin: 0.1rem 0 0.3rem 0.5rem;
+    line-height: 0.8rem;
+    text-align: center;
+    color: #fff;;
+    font-size: 0.4rem;
+    background-color: rgb(255, 103, 98);
+}
+
+.curtain-close {
+    font-family: 'iconfont';
+    width: 0.8rem;
+    height: 0.64rem;
+    line-height: 0.64rem;
+    text-align: center;
+    opacity: 0.1;
+    font-weight: 800;
+    font-size: 0.38rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/*版面不同需要添加的样式*/
+/*img-right模板*/
+.content-item-left {
+    width: 4.62rem;
+    height: 1.22rem;
+    float: left;
+}
+
+.content-item-left h3 {
+    width: 100%;
+    height: 1rem;
+    font-weight: normal;
+    color: #222;
+    font-size: 0.34rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+}
+
+.content-left-word {
+    margin-top: 0.15rem;
+}
+
+.content-item-right {
+    width: 2.27rem;
+    height: 1.47rem;
+    /*float: left;*/
+    /*background: url('https://p3.pstatp.com/list/pgc-image/15342040264340bea0cb534');*/
+    /*background-size: contain;*/
+}
+
+/*bottom-img模板*/
+.bottom-img-title {
+    width: 100%;
+    height: 0.84rem;
+    font-weight: normal;
+    color: #222;
+    font-size: 0.34rem;
+}
+
+.bottom-item-img {
+    width: 6.9rem;
+    height: 1.47rem;
+    margin-top: 0.12rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.bottom-item-img li {
+    width: 2.2rem;
+    height: 1.47rem;
+
+}
+
+.bottom-item-img li img {
+    width: 2.29rem;
+    height: 1.47rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

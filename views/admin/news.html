@@ -1,0 +1,121 @@
+<?php include "../views/admin/adminheader.html"?>
+<header class="page-title-bar">
+    <!-- .breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">
+                <a href="#">
+                    <i class="breadcrumb-icon fa fa-angle-left mr-2"></i>Tables</a>
+            </li>
+        </ol>
+    </nav>
+    <!-- /.breadcrumb -->
+    <!-- floating action -->
+    <button type="button" class="btn btn-success btn-floated">
+        <span class="fa fa-plus"></span>
+    </button>
+    <!-- /floating action -->
+    <!-- title and toolbar -->
+    <div class="d-md-flex align-items-md-start">
+        <h1 class="page-title mr-sm-auto"> Datatables </h1>
+        <!-- .btn-toolbar -->
+        <div class="dt-buttons btn-group"> <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="myTable" type="button"><span>Copy</span></button> <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="myTable" type="button"><span>Print</span></button> </div>
+        <!-- /.btn-toolbar -->
+    </div>
+    <!-- /title and toolbar -->
+</header>
+
+<div class="page-section">
+    <!-- .card -->
+    <section class="card card-fluid">
+        <!-- .card-header -->
+        <header class="card-header">
+            <!-- .nav-tabs -->
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active show" data-toggle="tab" href="#tab1">所有</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab2">当前</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#tab3">返回</a>
+                </li>
+            </ul>
+            <!-- /.nav-tabs -->
+        </header>
+        <!-- /.card-header -->
+        <!-- .card-body -->
+        <div class="card-body">
+            <!-- .form-group -->
+            <div class="form-group">
+                <!-- .input-group -->
+                <div class="input-group input-group-alt">
+                    <!-- .input-group-prepend -->
+                    <div class="input-group-prepend">
+                        <select id="filterBy" class="custom-select">
+                            <option value="" selected=""> Filter By </option>
+                            <option value="1"> Product </option>
+                            <option value="2"> Inventory </option>
+                            <option value="3"> Variants </option>
+                            <option value="4"> Prices </option>
+                            <option value="5"> Sales </option>
+                        </select>
+                    </div>
+                    <!-- /.input-group-prepend -->
+                    <!-- .input-group -->
+                    <div class="input-group has-clearable">
+                        <button id="clear-search" type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">
+                              <i class="fa fa-times-circle"></i>
+                            </span>
+                        </button>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <span class="oi oi-magnifying-glass"></span>
+                            </span>
+                        </div>
+                        <input id="table-search" type="text" class="form-control" placeholder="搜索数据"> </div>
+                    <!-- /.input-group -->
+                </div>
+                <!-- /.input-group -->
+            </div>
+            <!-- /.form-group -->
+            <!-- .table -->
+            <div id="myTable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="text-muted"><div class="dataTables_info" id="myTable_info" role="status" aria-live="polite">总共多少条数据</div></div><div class="table-responsive"><table id="myTable" class="table dataTable no-footer" aria-describedby="myTable_info" role="grid">
+                <!-- thead -->
+                <thead>
+                <tr role="row" style="text-align: center">
+                    <th style="width:50px;">Id</th>
+                    <th style="width:270px"> title </th>
+                    <th style="width:350px"> des </th>
+                    <th style="width:220px;">url</th>
+                    <th style="width:220px"> img </th>
+                    <th style="width: 20px"> cid </th>
+                    <th style="width: 20px"> types </th>
+                </tr>
+                </thead>
+                <!-- /thead -->
+                <tbody>
+                <?php foreach($news as $k=>$v){?>
+                    <tr>
+                        <td><?php echo $v['id']?></td>
+                        <td><input type="text" style="width: 100%" value="<?php echo $v['title']?>"></td>
+                        <td><input type="text" style="width: 100%" value="<?php echo $v['des']?>"></td>
+                        <td><input type="text" style="width: 100%" value="<?php echo $v['url']?>"></td>
+                        <td><input type="text" style="width: 100%" value="<?php echo $v['img']?>"></td>
+                        <td><input type="text" style="width: 100%" value="<?php echo $v['cid']?>"></td>
+                        <td><input type="text" style="width: 100%" value="<?php echo $v['types']?>"></td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+                <div class="mt-4"><div class="dataTables_paginate paging_simple_numbers" id="myTable_paginate"><ul class="pagination justify-content-center"><li class="paginate_button page-item previous disabled" id="myTable_previous"><a href="#" aria-controls="myTable" data-dt-idx="0" tabindex="0" class="page-link"><i class="fa fa-lg fa-angle-left"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="myTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="myTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="myTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="myTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="myTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item disabled" id="myTable_ellipsis"><a href="#" aria-controls="myTable" data-dt-idx="6" tabindex="0" class="page-link">…</a></li><li class="paginate_button page-item "><a href="#" aria-controls="myTable" data-dt-idx="7" tabindex="0" class="page-link">100</a></li><li class="paginate_button page-item next" id="myTable_next"><a href="#" aria-controls="myTable" data-dt-idx="8" tabindex="0" class="page-link"><i class="fa fa-lg fa-angle-right"></i></a></li></ul></div></div></div>
+            <!-- /.table -->
+        </div>
+        <!-- /.card-body -->
+    </section>
+    <!-- /.card -->
+</div>
+<?php include "../views/admin/adminfooter.html"?>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://s3.pstatp.com/image/toutiao_mobile/icon_180_1.png">
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/assets/index/js/rem.js"></script>
+    <link rel="stylesheet" href="/assets/index/css/rem.css">
+    <title>今日头条</title>
+    <link rel="stylesheet" href="/assets/index/css/index.css">
+</head>
+<body>
+<div id="head">
+    <div id="header">
+        <div class="header-title">
+            <span class="header-title-word">今日头条</span>
+        </div>
+        <div class="header-title-icon"></div>
+        <div class="header-icon-l">
+            <span class="header-icon-mail">&#xe7a0;</span>
+            <span class="header-icon-point">&#xe648;</span>
+        </div>
+        <div class="header-icon-r">&#xe601;</div>
+    </div>
+
+    <div id="species">
+        <div class="species-window">
+            <ul class="species-childs">
+                <?php foreach($category as $k=>$v) { ?>
+                    <?php if($v['is_dfult'] == 1) {?>
+                        <li data_mid="<?php echo $v['id']?>">
+                            <?php echo $v['name']?>
+                        </li>
+                    <?php } ?>
+                <?php } ?>
+            </ul>
+        </div>
+        <div class="species-more"><a href="/index.php?c=category&m=index" style="color: #f85959;width: 100%;height: 100%;">&#xe602;</a>
+        </div>
+        <div class="species-shadow"></div>
+    </div>
+</div>
+<div id="content">
+    <?php foreach($rows as $k => $v){ ?>
+
+        <?php if($v['types'] == ''): ?>
+        <div class="content-item">
+            <div class="content-item-left">
+                <a href="<?php echo $v['url']?>" style="font-style: normal;text-decoration: none;"><h3><?php echo $v['title']?></h3></a>
+                <div class="content-item-word content-left-word">
+                    <span class="level-one">置顶</span>
+                    <span class="level-two">党建网微平台</span>
+                    <span class="level-three">评论 73</span>
+                    <span class="level-four">7分钟前</span>
+                </div>
+            </div>
+            <a href="<?php echo $v['url']?>"><img src="<?php echo $v['img']?>" class="content-item-right"/></a>
+        </div>
+        <?php endif; ?>
+
+
+
+    <!--<?php if($v['types'] == 'normal'): ?>-->
+        <!--<div class="content-item normal">-->
+            <!--<h1><?php echo $v['content']?></h1>-->
+            <!--<div class="content-item-word">-->
+                <!--<span class="level-one">置顶</span>-->
+                <!--<span class="level-two">党建网微平台</span>-->
+                <!--<span class="level-three">评论 73</span>-->
+                <!--<span class="level-four">7分钟前</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--<?php endif; ?>-->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<?php if($v['types'] == 'big-pic'): ?>-->
+    <!--<div class="content-item">-->
+        <!--<div class="content-img">-->
+            <!--<img src="https://s2.pstatp.com/site/promotion/landing_page/img/游戏3_ee3a1e02c0cefc4a15a4c5e7ed21e28f.jpg"-->
+                 <!--alt="">-->
+        <!--</div>-->
+        <!--<div class="content-item-word">-->
+            <!--<span class="level-one">App</span>-->
+            <!--<span class="level-two">今日头条</span>-->
+
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<?php endif; ?>-->
+
+    <!--<?php if($v['types'] == 'bottom-img'): ?>-->
+    <!--<div class="content-item">-->
+        <!--<h3 class="bottom-img-title"><?php echo $v['content']?></h3>-->
+        <!--<ul class="bottom-item-img">-->
+            <!--<li>-->
+                <!--<img src="https://p3.pstatp.com/list/pgc-image/1534207201330566ad54227" alt="">-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<img src="https://p3.pstatp.com/list/pgc-image/1534207201496cf7512bef2" alt="">-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<img src="https://p3.pstatp.com/list/pgc-image/1534207201715aff6b35f4b" alt="">-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
+    <!--<?php endif; ?>-->
+
+    <?php } ?>
+
+
+    <!--<div class="content-item img-right">-->
+
+    <!--</div>-->
+
+    <!--<div class="content-item bottom-img">-->
+
+
+    <!--</div>-->
+
+
+    <!--<div class="content-item">-->
+
+    <!--</div>-->
+
+    <!--<div class="content-item big-picture">-->
+
+    <!--</div>-->
+
+
+</div>
+<div class="curtain">
+    <div class="curtain-item">
+        <div class="curtain-close">&#xe603;</div>
+        <div class="curtain-img"></div>
+        <div class="describe">已经加载好您感兴趣的头条</div>
+        <div class="button">立即打开</div>
+    </div>
+</div>
+</body>
+<script src="/assets/index/js/index.js"></script>
+</html>

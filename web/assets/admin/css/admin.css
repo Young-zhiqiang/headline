@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'iconfont';  /* project id 801055 */
+    src: url('https://at.alicdn.com/t/font_801055_thz20jymad.eot');
+    src: url('https://at.alicdn.com/t/font_801055_thz20jymad.eot?#iefix') format('embedded-opentype'),
+    url('https://at.alicdn.com/t/font_801055_thz20jymad.woff') format('woff'),
+    url('https://at.alicdn.com/t/font_801055_thz20jymad.ttf') format('truetype'),
+    url('https://at.alicdn.com/t/font_801055_thz20jymad.svg#iconfont') format('svg');
+}
+.dynamic{
+    width: 50px;
+    height: 30px;
+    margin: 0 auto;
+    font-family: 'iconfont';
+    text-align: center;
+    line-height: 30px;
+    z-index: 10;
+    color: blue;
+    font-size: 50px;
+    animation: dong .625s linear infinite;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+@keyframes dong{
+    from{
+        transform: rotate(0)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
