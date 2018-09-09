@@ -24,18 +24,14 @@
             <span class="header-icon-mail">&#xe7a0;</span>
             <span class="header-icon-point">&#xe648;</span>
         </div>
-        <div class="header-icon-r">&#xe601;</div>
+        <div class="header-icon-r"><a href="/index.php?c=search&m=search_html" style="color: white;">&#xe601;</a></div>
     </div>
 
     <div id="species">
         <div class="species-window">
             <ul class="species-childs">
                 <?php foreach($category as $k=>$v) { ?>
-                    <?php if($v['is_dfult'] == 1) {?>
-                        <li data_mid="<?php echo $v['id']?>">
-                            <?php echo $v['name']?>
-                        </li>
-                    <?php } ?>
+                    <li data-cid="<?php echo $v['id']?>"><?php echo $v['name']?></li>
                 <?php } ?>
             </ul>
         </div>
@@ -47,7 +43,6 @@
 <div id="content">
     <?php foreach($rows as $k => $v){ ?>
 
-        <?php if($v['types'] == ''): ?>
         <div class="content-item">
             <div class="content-item-left">
                 <a href="<?php echo $v['url']?>" style="font-style: normal;text-decoration: none;"><h3><?php echo $v['title']?></h3></a>
@@ -60,9 +55,8 @@
             </div>
             <a href="<?php echo $v['url']?>"><img src="<?php echo $v['img']?>" class="content-item-right"/></a>
         </div>
-        <?php endif; ?>
 
-
+    <?php } ?>
 
     <!--<?php if($v['types'] == 'normal'): ?>-->
         <!--<div class="content-item normal">-->
@@ -119,7 +113,7 @@
     <!--</div>-->
     <!--<?php endif; ?>-->
 
-    <?php } ?>
+
 
 
     <!--<div class="content-item img-right">-->

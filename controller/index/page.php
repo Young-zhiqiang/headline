@@ -1,29 +1,70 @@
 <?php
 include '../core/db.php';
-class news extends data{
-    public function index(){
-            if(isset($_GET['q'])){
-                $cid = $_GET['q'];
-            }else{
-                $cid = 1;
-            }
-
-        $category = $this->pdo->query("select * from category")->fetchAll();
-
-        $rows = $this->pdo ->query("select * from headline where cid=".$cid)->fetchAll();
-        include '../views/index/index.html';
-    }
-//    public function update(){
+//首页
+//class news extends data{
+//    public function index(){
+//            if(isset($_GET['q'])){
+//                $cid = $_GET['q'];
+//            }else{
+//                $cid = 1;
+//            }
+//
+//        $category = $this->pdo->query("select * from category")->fetchAll();
+//
+//        $rows = $this->pdo ->query("select * from headline where cid=".$cid)->fetchAll();
+////        var_dump($rows);
+//        include '../views/index/index.html';
+//    }
+//    public function index_data(){
 //        if(isset($_GET['q'])){
 //            $cid = $_GET['q'];
 //        }else{
 //            $cid = 1;
 //        }
+//
 //        $category = $this->pdo->query("select * from category")->fetchAll();
 //
 //        $rows = $this->pdo ->query("select * from headline where cid=".$cid)->fetchAll();
+//        echo json_encode($rows);
+//    }
+//}
+//首页
+class news extends data{
+    public function index(){
+        if(isset($_GET['cid'])){
+            $cid=$_GET['cid'];
+        }else{
+            $cid=1;
+        }
+        $category = $this->pdo->query("select * from category where is_dfult=1")->fetchAll();
+        $rows = $this->pdo->query("select * from headline where cid=".$cid)->fetchAll();
+        include '../views/index/index.html';
+    }
+
+
+
+    //测试
+//    public function index_data(){
+//        if(isset($_GET['cid'])){
+//            $cid=$_GET['cid'];
+//        }else{
+//            $cid=1;
+//        }
+//
+//        $rows = $this->pdo->query("select * from headline where cid=".$cid)->fetchAll();
+//        echo json_encode($rows);
 //    }
 }
+
+
+
+
+
+
+
+
+
+
 
 //分类页面
 class category extends data{
@@ -37,6 +78,38 @@ class category extends data{
 
 }
 
+//搜索页面
+class search extends data{
+    const PAGE_total=5;
+    public function search_html(){
+        if(isset($_GET['k'])){
+            $keyword = $_GET['k'];
+        }else{
+            $keyword = '';
+        }
+        if(isset($_GET['p'])){
+            $page = $_GET['p'];
+        }else{
+            $page = 1;
+        }
+        $relauts = $this->pdo->query("select * from headline where title like '%".$keyword."%' limit ".$this::PAGE_total." offset ".($page-1)*$this::PAGE_total)->fetchAll();
+        include '../views/index/search.html';
+    }
+    public function search_data(){
+        if(isset($_GET['k'])){
+            $keyword = $_GET['k'];
+        }else{
+            $keyword = '';
+        }
+        if(isset($_GET['p'])){
+            $page = $_GET['p'];
+        }else{
+            $page = 1;
+        }
+        $relauts = $this->pdo->query("select * from headline where title like '%".$keyword."%' limit ".$this::PAGE_total." offset ".($page-1)*$this::PAGE_total)->fetchAll();
+        echo json_encode($relauts);
+    }
+}
 
 
 

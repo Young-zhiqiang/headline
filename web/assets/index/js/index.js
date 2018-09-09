@@ -25,40 +25,18 @@
 // jquery
 $(function () {
     $('.species-childs').on('click','li',function () {
-
-        let cid = parseInt($(this).attr('data_mid'));
+        let cid = $(this).attr('data-cid');
         $.ajax({
             url:'/index.php',
-            type:'get',
             data:{
-                c:'news',
                 m:'index',
-                q:cid
-            },
-            success:function (e) {
-                $('#content').html(e)
+                cid:cid
+            },success:function (data) {
+                $('#content').html(data)
             }
-    })
+        })
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
