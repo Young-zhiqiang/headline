@@ -12,9 +12,11 @@
     list-style: none;
     box-sizing: border-box;
     text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: 0;
 }
 .search_banner{
-    width: 7.5rem;
+    /* width: 7.5rem; */
     height: 0.88rem;
     background-color: #d43d3d;
     line-height: 0.88rem;
@@ -36,7 +38,7 @@
     left:0;
 }
 .search_input{
-   width: 7.5rem;
+    /* width: 7.5rem; */
     height: 0.76rem;
     background-color: #c9c9c9;
     padding: 5px;
@@ -56,7 +58,7 @@
     color: #666;
 }
 #content{
-    width: 7.5rem;
+    /* width: 7.5rem; */
     height: auto;
 }
 #content li{

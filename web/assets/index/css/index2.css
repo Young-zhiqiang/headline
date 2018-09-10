@@ -14,7 +14,6 @@
     list-style: none;
     text-decoration: none;
 }
-
 body {
     background-color: #F8F8F8;
 }
@@ -109,6 +108,7 @@ body {
     width: 100%;
     height: 2.64rem;
     margin: 0.2rem auto;
+
 }
 
 .add-item {
@@ -146,6 +146,8 @@ body {
 
     }
 }
+-webkit-tap-hightlight-
+
 
 
 
